@@ -41,9 +41,9 @@ export class FlatService {
   }
 
 
-  public getFlatByName(fname: string): Observable<cflat[]> {
+  public getFlatByName(fname: string): Observable<cflat> {
     const getbyNameurl = `${this.base_url}/name/${fname}`;
-    return this.httpClient.get<cflat[]>(getbyNameurl);
+    return this.httpClient.get<cflat>(getbyNameurl);
   }
 
   public addFlat(newFlat: cflat): Observable<cflat> {

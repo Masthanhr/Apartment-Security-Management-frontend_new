@@ -53,13 +53,12 @@ import { FlatService } from 'src/app/service/flat.service';
   </div>
   
   <div *ngIf="flatdata" class="well hoverwell thumbnail py-3 my-3  ">
-  <div *ngFor="let flat of flatdata " class="row row-cols-2">
       
       <div> OWNER NAME : {{flat?.ownerName | titlecase}} </div>
       <div>FLAT NO : {{flat?.flatNo | titlecase}} </div>
       <div>FLOOR NO : {{flat?.floorNo | titlecase}} </div>
       <div> FLAT TYPE : {{flat?.flatType | titlecase}} </div>
-    </div>
+
       
   </div>
   </div>
@@ -91,7 +90,7 @@ export class FlatByNameComponent {
   alert('Flat By Owner Name !!!!');
   }
 
-  private flatdata: cflat[];
+  private flatdata: cflat;
   private errorMessage='';
 
   validate(flatname){
