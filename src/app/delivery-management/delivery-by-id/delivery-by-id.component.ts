@@ -7,15 +7,16 @@ import { DeliveryService } from 'src/app/service/delivery.service';
 @Component({
   selector: 'delivery-details',
   template:  `
-  
+  <body style="background-color:#C0C0C0">
   <div *ngIf="errorMessage" class="alert alert-danger">
   {{errorMessage?.error?.details | json}}
   </div>
 
   <div>
+  <div class = "container" style="text-align: center; width:1100px;">
   <div *ngIf="delivery" class="well hoverwell thumbnail py-3 my-3">
   <table class="table table-bordered">
-  <tr>
+  <tr style="background-color: yellowgreen;">
   <th>Delivery Id</th>
   <th>Owner Name</th>
   <th>Time</th>
@@ -30,7 +31,7 @@ import { DeliveryService } from 'src/app/service/delivery.service';
   <td>{{delivery?.date | date:'mediumDate'}}</td>
   <td>{{delivery?.status1}}</td>
   <td>
-  <button class="btn btn-primary" [routerLink]="['/navbar/delivery-management/deliveries',delivery?.deliveryId]">Delete</button>
+  <button class="btn btn-danger" (click)=" on_click()" [routerLink]="['/navbar/delivery-management/deliveries',delivery?.deliveryId]">Delete</button>
   <button class="btn btn-primary" (click)="updateDelivery(delivery.deliveryId)">Update</button>
   
   </td>
@@ -40,7 +41,9 @@ import { DeliveryService } from 'src/app/service/delivery.service';
   
   </table>
 </div>
-</div>`
+</div>
+</div>
+</body>`
               ,
 })
 export class DeliveryByIdComponent {
@@ -65,5 +68,10 @@ export class DeliveryByIdComponent {
   //   this.deliveryService.deleteDelivery(deliveryId).subscribe(data=> this.delivery=data);
   //   this.router.navigate(['/deliveries']);
   // }
+
+  on_click()
+    {
+    alert('Deleted Successfully');
+    }
  
 }

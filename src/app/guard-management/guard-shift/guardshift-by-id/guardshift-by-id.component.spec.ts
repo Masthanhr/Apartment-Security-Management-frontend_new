@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GuardshiftByIdComponent } from './guardshift-by-id.component';
+import { GuardShiftByIdComponent } from './guardshift-by-id.component';
 
-describe('GuardshiftByIdComponent', () => {
-  let component: GuardshiftByIdComponent;
-  let fixture: ComponentFixture<GuardshiftByIdComponent>;
+describe('GuardShiftByIdComponent', () => {
+  let component: GuardShiftByIdComponent;
+  let fixture: ComponentFixture<GuardShiftByIdComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GuardshiftByIdComponent ]
+      declarations: [ GuardShiftByIdComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GuardshiftByIdComponent);
+    fixture = TestBed.createComponent(GuardShiftByIdComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

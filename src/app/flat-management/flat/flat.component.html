@@ -1,70 +1,40 @@
-
-  
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger ">
-      
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-                                                             <!--  http://localhost:4200/flat-management/flat/new -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" >
-          <li class="nav-item active">
-            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" [routerLink]="['./flats']"
-              >Flats <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item px-5">
-            <a class="nav-link " id="pills-home-tab" data-toggle="pill" [routerLink]="['./new']">Create Flat</a>
-          </li>
-          <li class="nav-item px-5">
-            <a class="nav-link " id="pills-home-tab" data-toggle="pill" [routerLink]="['./delete']">Delete Flat</a>
-          </li>
-          <li class="nav-item px-5">
-            <a class="nav-link " id="pills-home-tab" data-toggle="pill" [routerLink]="['./update']">Update Flat</a>
-          </li>
-          
-          <li class="nav-item px-5">
-            <a class="nav-link " id="pills-home-tab" data-toggle="pill" [routerLink]="['./name']">Flat By Name</a>
-          </li>
-
-          
-          <!-- <li class="nav-item dropdown px-5">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Flat Details
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" [routerLink]="['/flats']">Flat Owner</a>
-              <a class="dropdown-item" href="#">Flat Manager</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Flat Details</a>
-            </div>
-          </li> -->
+<head>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="admin-sidebar" class="col-md-2 p-x-0 p-y-3">
+        <ul class="sidenav admin-sidenav list-unstyled">
+          <li><a [routerLink]="['./flats']">Flats</a></li>
+          <li><a [routerLink]="['./new']">Create Flat</a></li>
+          <li><a [routerLink]="['./delete']">Delete Flat</a></li>
+          <li><a [routerLink]="['./update']">Update Flat</a></li>
+          <li><a [routerLink]="['./name']">Flat By Name</a></li>
         </ul>
-          
-        
       </div>
-    </nav>
- 
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</body>
 
-    <router-outlet></router-outlet>
-    
+<router-outlet></router-outlet>
 
-  
-
-
+<!-- /#admin-sidebar -->
+<!-- <div id="admin-main-control" class="col-md-10 p-x-3 p-y-1">
+                <div class="content-title m-x-auto">
+                    <i class="fa fa-dashboard"></i> Dashboard
+                </div>
+                <p class="display-4">Dashboard-y Things</p>
+                <p class="text-primary">This is where one might find all sorts of dashboard-y goodness...</p>
+                <p class="text-success">Instead, you're seeing Lorem Gibson, which is cooler than Lorem Ipsum, but a little less cool than Lorem Jackson.</p>
+                <p class="text-muted">Mostly, you'll find that I'm just finding excuses to use BS4's crazy cool classes...</p>
+                <p class="text-danger">Don't be distracted by all of this filler. The cool stuff is in the sidebar nav!</p>
+                <p>Military-grade dissident concrete knife RAF warehouse stimulate wonton soup sentient lights sub-orbital modem jeans. Ablative engine kanji sentient order-flow vehicle corporation plastic. Assassin Shibuya woman camera nano-network corrupted cartel boy. Tank-traps into youtube footage bicycle towards cyber-dissident. Futurity bridge modem skyscraper shanty town nodal point hotdog boat cartel A.I. DIY. Systema modem j-pop claymore mine singularity uplink tube systemic 3D-printed
+                </p>
+            </div> -->
+<!-- /#admin-main-control -->

@@ -6,8 +6,10 @@ import { FlatRentService } from 'src/app/service/flatrent.service';
 
 @Component({
   selector: 'flatrent',
-  template: `<div class="container" >
-                <h1>Flat Details</h1>
+  template: `
+  <body>
+  <div class="container" >
+                <h1>Flat Rent Details</h1>
                 <hr/>
                 <div  class= "row row-cols-2">
                 <div  *ngFor="let flatrent of flatrent | paginate: {itemsPerPage: 6,currentPage:p}" class="col-md-4">  
@@ -16,10 +18,14 @@ import { FlatRentService } from 'src/app/service/flatrent.service';
 
                 </div>
               </div>
+              </div>
+              </body>
     <footer>
     <pagination-controls (pageChange)="p=$event"></pagination-controls>
     </footer>
-              `
+              `,
+
+              styleUrls: ['./all-flat-rent.component.css'],
 
 })
 export class FlatRent1Component implements OnInit {

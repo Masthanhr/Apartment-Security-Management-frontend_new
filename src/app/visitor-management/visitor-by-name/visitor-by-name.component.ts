@@ -8,7 +8,9 @@ import { VisitorService } from 'src/app/service/visitor.service';
 
 @Component({
   selector: 'visitor',
-  template: `<div class= "row-auto">
+  template: `
+  <body style="background-color:#C0C0C0">
+  <div class= "row-auto">
   <div class="well hoverwell thumnail">
    <table class="table table-bordered">
               <tr>
@@ -49,6 +51,7 @@ import { VisitorService } from 'src/app/service/visitor.service';
    </div> 
 
    </div> 
+   </body>
 `,
 })
 

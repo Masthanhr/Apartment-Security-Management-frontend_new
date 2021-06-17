@@ -1,19 +1,36 @@
 
-<div class="container">
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['./deliveries']">Delivery <span class="sr-only">(current)</span></a>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="container">
+    <ul>
+      <li>
+        <a class="nav-link" [routerLink]="['./deliveries']">Delivery</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['./new']">New Delivery</a>
-      </li>
-     
     </ul>
-    
+
+    <ul>
+      <li>
+        <a class="nav-link" [routerLink]="['./new']">New Delivery</a
+        >
+      </li>
+    </ul>
   </div>
 </nav>
-</div>
+
+
+ 
+
 
  <router-outlet></router-outlet>

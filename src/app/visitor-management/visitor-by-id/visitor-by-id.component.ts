@@ -8,7 +8,10 @@ import { VisitorService } from 'src/app/service/visitor.service';
 
 @Component({
   selector: 'visitor',
-  template: `<div class= "row-auto">
+  template: `
+  <body style="background-color:#C0C0C0">
+  <div class="container">
+  <div class= "row-auto">
   <div class="well hoverwell thumnail">
    <table class="table table-bordered">
               <tr>
@@ -45,7 +48,7 @@ import { VisitorService } from 'src/app/service/visitor.service';
             
               <td>
                <button class="btn btn-primary" title="delete visitor" (click)=delete(visitorinfo.flatNo) >Delete</button>
-              <!--<button class="btn btn-primary" title="delete visitor"  [routerLink]="['/navbar/visitor-management/visitors',visitorinfo?.flatNo]">Delete</button>-->
+              <!--<button class="btn btn-danger" title="delete visitor"  [routerLink]="['/navbar/visitor-management/visitors',visitorinfo?.flatNo]">Delete</button>-->
             </td>
            
            <td>
@@ -54,10 +57,11 @@ import { VisitorService } from 'src/app/service/visitor.service';
             </tr>
                
               </table>
-
+        </div>
   
               </div> 
    </div> 
+   </body>
 `,
 })
 

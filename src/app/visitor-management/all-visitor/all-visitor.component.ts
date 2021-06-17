@@ -25,10 +25,10 @@ import { Visitor } from 'src/app/model/visitor.model';
         <td>{{visitorinfo?.arrivalTime}}</td>
         <td>{{visitorinfo?.departureTime}}</td>
         <td>
-        <button [class]=buttonStyle (click) = "onClick()" [routerLink]="['/navbar/visitor-management/visitors/name',visitorinfo.ownerName]">View by Name</button>    
+        <button [class]=buttonStyle (click) = " on_click2()" (click) = "onClick()" [routerLink]="['/navbar/visitor-management/visitors/name',visitorinfo.ownerName]">View by Name</button>    
         </td>
         <td>
-        <button [class]=buttonStyle (click) = "onClick()" [routerLink]="['/navbar/visitor-management/visitors/id',visitorinfo.flatNo]">View by ID</button> 
+        <button [class]=buttonStyle (click) = " on_click1()" (click) = "onClick()" [routerLink]="['/navbar/visitor-management/visitors/id',visitorinfo.flatNo]">View by ID</button> 
         </td>
         </tr>
         
@@ -59,7 +59,15 @@ export class AllVisitorComponent {
   onClick() {
     this.customEvent.emit(this.visitorinfo)
     console.log("message is printed")
-
-
   };
+
+  on_click1()
+    {
+    alert('Visitor By Id');
+    }
+
+    on_click2()
+    {
+    alert('Visitor By Name');
+    }
 }

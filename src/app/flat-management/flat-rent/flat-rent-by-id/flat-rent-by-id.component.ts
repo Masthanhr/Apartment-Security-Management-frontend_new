@@ -7,6 +7,7 @@ import { FlatRentService } from 'src/app/service/flatrent.service';
 @Component({
   selector: 'flatrentbyid',
   template:`
+  <body>
   <div *ngIf="errorMessage" class="alert alert-danger">
   {{errorMessage?.error?.details | json}}
   </div>
@@ -21,13 +22,10 @@ import { FlatRentService } from 'src/app/service/flatrent.service';
       <div>FLAT NO : {{flatrentdata?.flatNo | titlecase}} </div>
       <div>AMOUNT : {{flatrentdata?.amount | titlecase}} </div>
       <div> FLAT TYPE : {{flatrentdata?.flatType | titlecase}} </div>
-      <div>
-          
-
-      </div>
   </div>
   </div>
-</div>`,
+</div>
+</body>`,
 })
 export class FlatRentByIdComponent implements OnInit {
     

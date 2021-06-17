@@ -7,15 +7,17 @@ import { Component,Input,Output, EventEmitter} from '@angular/core';
   <div class="well hoverwell thumbnail py-3 my-3">
       <div> USER ID : {{guarddata?.userId}} </div>
       <div>  NAME : {{guarddata?.name | titlecase}} </div>
+      <!--
       <div>TIME : {{guarddata?.time | titlecase}} </div>
-      <div>DATE : {{guarddata?.date | titlecase}} </div>
-      <div>
-          <span> <button [class]=buttonStyle (click)="onButtonClick()" [routerLink]="['/navbar/guard-management/GuardShift/userId',guarddata.userId]"> View By Id</button></span>
+      <div>DATE : {{guarddata?.date | titlecase}} </div>  -->
+      <div> 
+          <span> <button [class]=buttonStyle (click)=on_click1() (click)="onButtonClick()" [routerLink]="['/navbar/guard-management/GuardShift/userId',guarddata.userId]"> View Details</button></span>
       </div>
 
+      <!--
       <div>
       <span> <button [class]=buttonStyle (click)="onButtonClick()" [routerLink]="['/navbar/guard-management/GuardShift/name',guarddata.name]"> View By Name</button></span>
-  </div>
+  </div>  -->
   </div>
 </div>`,
 })
@@ -33,6 +35,12 @@ export class AllGuardShiftComponent {
      this.isDisabled = false
      this.buttonStyle = "btn btn-success";
    }
+
+   on_click1()
+   {
+   alert('Viewing all Guard Shift details');
+   }
+ 
 
  
    onButtonClick(){

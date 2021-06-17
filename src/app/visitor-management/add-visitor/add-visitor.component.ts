@@ -9,7 +9,7 @@ import { VisitorService } from 'src/app/service/visitor.service';
   @Component({
     selector: 'create-visitor',
     template: `
-    
+    <body style="background-color:#C0C0C0">
     <div class = "container" style= "width:550px">
     <div style ="text-align:center;">
     <h2><b>New Visitor Registeration</b></h2>
@@ -19,7 +19,10 @@ import { VisitorService } from 'src/app/service/visitor.service';
     <div class="form-group" >
       <label for="flatNo">Flat No:</label>
       <em *ngIf="createForm.controls.flatNo?.invalid && (createForm.controls.flatNo?.touched)">Required</em>
-      <input  id="flatNo" type="text" required class="form-control" formControlName="flatNo"  ngModel placeholder="flat no ..." />
+      <em *ngIf="createForm.controls.flatNo?.pattern">Special Characters are not allowed babe</em>
+      <em *ngIf="createForm.controls.flatNo?.errors?.minlength">Enter Full Flat Number</em>
+      <input  id="flatNo" type="text" required class="form-control" formControlName="flatNo" min="0" required minlength="1" required maxlength="10" [pattern]="'^[a-zA-Z0-9]+$'" 
+      ngModel placeholder="flat no ..." />
     </div>
   
     <div class="form-group" >
@@ -41,21 +44,25 @@ import { VisitorService } from 'src/app/service/visitor.service';
     </div>
   
     <div class="form-group" >
-      <label for="arrivalTime">Arrival Time:</label>
-      <em *ngIf="createForm.controls.arrivalTime?.invalid && (createForm.controls.arrivalTime?.touched)">Required</em>
-      <input  id="arrivalTime"  required type="text" class="form-control" formControlName="arrivalTime" ngModel  placeholder="start and end time..." />
-    </div>
-  
-    <div class="form-group" >
-      <label for="departureTime">Departure Time:</label>
-      <em *ngIf="createForm.controls.departureTime?.invalid && (createForm.controls.departureTime?.touched)">Required</em>
-      <input  id="departureTime"  required type="text" class="form-control" formControlName="departureTime" ngModel placeholder="start and end time..." />
-    </div>
+    <label for="arrivalTime">Arrival Time:</label>
+    <em *ngIf="createForm.controls.arrivalTime?.invalid && (createForm.controls.arrivalTime?.touched)">Required</em>
+    <em *ngIf="createForm.controls.arrivalTime?.errors?.minlength">Enter Full Time</em>  
+    <input  id="arrivalTime"  required type="text" class="form-control" formControlName="arrivalTime" required minlength="4" required maxlength="10" ngModel  placeholder="start and end time..." />
+  </div>
+
+  <div class="form-group" >
+    <label for="departureTime">Departure Time:</label>
+    <em *ngIf="createForm.controls.departureTime?.invalid && (createForm.controls.departureTime?.touched)">Required</em>
+    <em *ngIf="createForm.controls.departureTime?.errors?.minlength">Enter Full Time</em>  
+    <input  id="departureTime"  required type="text" class="form-control" formControlName="departureTime"  required minlength="4" required maxlength="10"  ngModel placeholder="start and end time..." />
+  </div>
     
-      <button type="submit"  [disabled]=createForm.invalid class="btn btn-primary">Save</button>
+    
+      <button type="submit" (click)=" on_click()"  [disabled]=createForm.invalid class="btn btn-primary">Save</button>
       <button type="button"   class="btn btn-primary" (click)="cancel()">Cancel</button>
       </form>
-    </div>`,
+    </div>
+    </body>`,
     styles: ['em{float:right; color: #E05c65; padding-left-10px;}']
   })
   
@@ -96,5 +103,10 @@ import { VisitorService } from 'src/app/service/visitor.service';
   
     cancel() {
       this.router.navigate(['/navbar/visitor-management/visitors'])
+    }
+
+    on_click()
+    {
+    alert('Added Successfully');
     }
   }

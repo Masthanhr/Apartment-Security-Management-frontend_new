@@ -7,11 +7,12 @@ import { FlatService } from 'src/app/service/flat.service';
 @Component({
   selector: 'deleteflat',
   template:`
+  <body>
   <div class="container" >
     <h1>Delete on Flat Details</h1>
     <hr/>
     <div  class= "row row-cols-2">
-    <div  *ngFor="let flats of flats  | paginate: {itemsPerPage: 6,currentPage:p}" class="col-md-4 " > 
+    <div  *ngFor="let flats of flats  | paginate: {itemsPerPage: 4,currentPage:p}" class="col-md-4 " > 
    
                            
           <div class="well hoverwell thumbnail py-3 my-3" >
@@ -22,23 +23,22 @@ import { FlatService } from 'src/app/service/flat.service';
               <div>FLOOR NO : {{flats?.floorNo | titlecase}} </div>
               <div> FLAT TYPE : {{flats?.flatType | titlecase}} </div>
               <div>
-              <button class="btn btn-danger " type="submit" (click)="deleteflat(flats.userId)" onclick="myFunction()" > DELETE 
+              <button class="btn btn-danger " (click) = "on_click1()" type="submit" (click)="deleteflat(flats.userId)" > DELETE 
               </button>
               </div>
             </div>
           </div>
-        
+        </div>
 
       </div>
-    </div>
+      </body>
+    
 
 
     <footer>
     <pagination-controls (pageChange)="p=$event"></pagination-controls>
-    </footer>
-    
-    
- `,
+    </footer>`,
+    styleUrls: ['./delete-flat.component.css'],
 })
 
 
@@ -73,9 +73,12 @@ export class DeleteFlatComponent implements OnInit {
       this.router.navigate(['/navbar/flat-management/flat/flats']);
     }
 
-    myFunction() {
-      alert("successfully deleted "+cflat);
+    on_click1()
+    {
+    alert('Deleted Successfully');
     }
+
+   
   
 
   

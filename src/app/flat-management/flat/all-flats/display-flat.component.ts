@@ -16,7 +16,7 @@ import { cflat } from 'src/app/model/flat.model';
       <div> FLAT TYPE : {{flatdata?.flatType | titlecase}} </div>
       <div>
           <!-- <span> <input type="text" value="Hello" (keypress) = "myFunction()"></span><br/>-->
-          <span> <button [class]=buttonStyle (click)="onButtonClick()"  [routerLink]="['./id',flatdata.userId]"> View </button></span>
+          <span> <button [class]=buttonStyle (click) = "on_click1()" (click)="onButtonClick()"  [routerLink]="['./id',flatdata.userId]"> View </button></span>
       </div>
   </div>
 </div>`,
@@ -39,6 +39,12 @@ export class DisplayFlatsComponent {
    onButtonClick(){
      this.customEvent.emit(this.flatdata);  // what ever is send  by default get stored into one javascript '$event'
    }
+
+   on_click1()
+    {
+    alert('Flat By Id');
+    }
+
 
   
 

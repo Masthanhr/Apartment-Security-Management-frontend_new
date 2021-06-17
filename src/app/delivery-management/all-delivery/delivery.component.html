@@ -1,0 +1,34 @@
+<body>
+  <div style="background-color:#C0C0C0">
+    <div  class = "container" style="text-align: center; width:1100px;">
+    <div class="well hoverwell thumbnail py-3 my-3">
+    <table class="table table-bordered">
+    <tr style="background-color: yellowgreen;">
+    <th>Delivery Id</th>
+    <th>Owner Name</th>
+    <th>Time</th>
+    <th>Date</th>
+    <th>Status1</th>
+    </tr>
+    
+    <tr style="text-align: center;">    
+    <td> {{deliveryDetails?.deliveryId}} </td>
+      <td>{{deliveryDetails?.ownerName | titlecase}}</td>
+      <td>{{deliveryDetails?.time1}}</td>
+      <td>{{deliveryDetails?.date | date:'mediumDate'}}</td>
+      <td>{{deliveryDetails?.status1}}</td>
+      <td>
+      <button [class]=buttonStyle (click)=" on_click2()" (click)="onClick()" [routerLink]="['./name',deliveryDetails.ownerName]"> ViewByName </button>
+      <button [class]=buttonStyle (click)=" on_click1()"(click)="onClick()" [routerLink]="['./id',deliveryDetails.deliveryId]"> ViewById </button>
+      
+      </td>
+      </tr>
+      
+     
+      
+      </table>
+    </div>
+    </div>
+    </div>
+    
+    </body>

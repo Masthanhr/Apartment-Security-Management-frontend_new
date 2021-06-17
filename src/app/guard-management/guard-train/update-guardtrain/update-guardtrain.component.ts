@@ -10,21 +10,26 @@ import { GuardService } from 'src/app/service/guard.service';
 
 @Component({
   selector: 'updateguard',
-  template: `<div class="col-md-6">
+  template: `
+  <body style="background-color:#C0C0C0">
+  <div  class = "container" style="width:550px"> 
+  
  
   <form [formGroup]="newGuardForm"  autocomplete="on" novalidate (ngSubmit)="updateGuardTrain(newGuardForm.value)">
         
 
   <div class="form-group" >
     <label for="userId">UserId: </label>
+    <em *ngIf="newGuardForm.controls.userId?.errors?.pattern">Negative userId not allowed</em>
     <em *ngIf="(newGuardForm.controls.userId?.invalid) && (newGuardForm.controls.userId?.touched)">Required</em>
-        <input  id="userId" required type="number" class="form-control" formControlName="userId"  [(ngModel)]=guard.userId placeholder="Enter UserId..." />
+        <input  readonly id="userId" required [pattern] = "'^[1-9][0-9]*$'" type="number" class="form-control" formControlName="userId"  [(ngModel)]=guard.userId placeholder="Enter UserId..." />
   </div>
 
   <div class="form-group" >
   <label for="name">name: </label>
+  <em *ngIf="newGuardForm.controls.name?.errors?.minlength">Name should be atleast 3 charcters</em>
   <em *ngIf="(newGuardForm.controls.name?.invalid) && (newGuardForm.controls.name?.touched)">Required</em>
-      <input  id="name" required type="text" class="form-control" formControlName="name"  [(ngModel)]=guard.name placeholder="Enter name..." />
+      <input  id="name" required type="text" class="form-control" formControlName="name"  [(ngModel)]=guard.name placeholder="Enter name..." minlength="3"/>
 </div>
 
 <div class="form-group" >
@@ -35,8 +40,9 @@ import { GuardService } from 'src/app/service/guard.service';
 
 <div class="form-group" >
 <label for="mobileNo">mobileNo: </label>
+<em *ngIf="newGuardForm.controls.mobileNo?.errors?.pattern">Phone number should contain 10 digit</em>
 <em *ngIf="(newGuardForm.controls.mobileNo?.invalid) && (newGuardForm.controls.mobileNo?.touched)">Required</em>
-    <input  id="mobileNo" required type="text" class="form-control" formControlName="mobileNo"  [(ngModel)]=guard.mobileNo placeholder="Enter mobileNo..." />
+    <input  id="mobileNo" required pattern="[0-9]{10}" type="text" class="form-control" formControlName="mobileNo"  [(ngModel)]=guard.mobileNo placeholder="Enter mobileNo..." maxlength="10"/>
 </div>
 
 <div class="form-group" >
@@ -46,16 +52,18 @@ import { GuardService } from 'src/app/service/guard.service';
 </div>
 
 <div class="form-group" >
-<label for="timeing">timeing: </label>
+<label for="timeing">time: </label>
 <em *ngIf="(newGuardForm.controls.timeing?.invalid) && (newGuardForm.controls.timeing?.touched)">Required</em>
-    <input  id="timeing" required type="text" class="form-control" formControlName="timeing"  [(ngModel)]=guard.timeing placeholder="Enter timeing..." />
+    <input  id="timeing" required type="time" class="form-control" formControlName="timeing"  [(ngModel)]=guard.timeing placeholder="Enter timeing..." />
 </div>
 
   
-  <button type="submit"  [disabled]=newGuardForm.invalid class="btn btn-primary">Update</button>
+  <button type="submit" (click)="on_click1()" [disabled]=newGuardForm.invalid class="btn btn-primary">Update</button>
   <button type="button"   class="btn btn-primary" (click)="cancel()">Cancel</button>
   </form>
   </div>
+  
+  </body>
 
   `,
   styles: [`em{float:right; color: #E05c65; padding-left-10px;`]
@@ -99,5 +107,13 @@ export class UpdateGuardTrainComponent implements OnInit {
        this.router.navigate(['/navbar/guard-management/GuardTraining']);
   }
 
+  on_click1()
+  {
+  alert('Updated Id Successfully');
+  }
+
+  cancel() {
+    this.router.navigate(['/navbar/guard-management/GuardTraining'])
+  }
   
 }

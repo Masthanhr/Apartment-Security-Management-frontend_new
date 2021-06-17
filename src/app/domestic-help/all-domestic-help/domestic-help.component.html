@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <h1 style="text-align: center;"><u>Domestic Help Details</u></h1>
-    <body style="background-image: url('./assets/apartemnt 1.jpg');" >
+    <body style="background-image: url('/assets/apartment1.jpeg'); width: 100%; height: 100%; " >
         <div class="container"> 
             <hr/>
             <div  class= "row row-cols-2">
@@ -19,9 +19,9 @@
                      Departure Time: {{domHelp?.depTime}} <br/>
                      Date: {{domHelp?.date}} <br/>
                      Help Type: {{domHelp?.helpType}} <br/> -->  
-                     <div class="col-md-4"> <button class="btn btn-primary" (click)="onButtonClick(domHelp.flatNo)">
+                     <div class="col-md-4"> <button class="btn btn-primary" (click) = "on_click1()" (click)="onButtonClick(domHelp.flatNo)">
                         Get By Id</button></div>
-                     <div class="col-md-4"> <button class="btn btn-primary" (click)="onButtonClick1(domHelp.name)">
+                     <div class="col-md-4"> <button class="btn btn-primary" (click) = "on_click2()" (click)="onButtonClick1(domHelp.name)">
                             Get By Name</button></div>
                      <!-- <button class="btn btn-primary" [routerLink]="['/domHelp/' + 'domHelp.flatId']">Navigation using RouterLink in template</button> -->
                      <!-- </div>  -->

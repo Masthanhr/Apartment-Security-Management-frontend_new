@@ -9,17 +9,6 @@
     background-color:cornflowerblue;
     cursor: pointer;
 }
-
-.well{
-    background-color:khaki;
-}
-
-.container{
-    padding-top: 10px;
-}
-
-
-
 .form{
 
     display:inline-table;
@@ -30,4 +19,12 @@
 .form.container{
     background-color: bisque;
 } 
- 
+
+.container{
+    padding-top: 10px;
+}
+
+/* .well{
+    background-color:khaki;
+}
+ */

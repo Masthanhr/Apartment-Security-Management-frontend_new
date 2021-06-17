@@ -33,6 +33,12 @@ import { DomesticService } from 'src/app/service/domestichelp.service';
     updateHelp(flatNo:String){
       this.router.navigateByUrl("/navbar/domestic-help/update/"+flatNo)
   }
-    
+  on_click()
+  {
+  alert('Deleted Successfully');
+  }
+
+ 
+
   
   }

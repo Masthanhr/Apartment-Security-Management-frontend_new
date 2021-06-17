@@ -10,7 +10,7 @@ import { DomesticService } from 'src/app/service/domestichelp.service';
   @Component({
     selector: 'create-DomHelp',
     templateUrl:`./add-domestic-help.component.html`,
-    styles: ['em{float:right; color: #E05c65; padding-left-10px;}']
+    styles: [`em{float:right; color: #E05c65; padding-left-10px;`]
   },
   
   )
@@ -43,6 +43,10 @@ import { DomesticService } from 'src/app/service/domestichelp.service';
       console.log(newHelp)
     }
   
+    on_click()
+    {
+    alert('Added Successfully');
+    }
     cancel() {
       this.router.navigate(['/navbar/domestic-help/domHelp'])
     }

@@ -1,10 +1,16 @@
 import { Time } from "@angular/common"
 export class Admin{
-   [x: string]: any;
+  emailId: string;
+  password(password: any) {
+    throw new Error('Method not implemented.');
+  }
+   adminId: number;
+    
+  
      
    constructor(
-     emailId: string,
-     password: string,
+     emailId?: string,
+     password?: string,
      adminId?: number,
      firstName?: string,
      lastName?: string,
@@ -17,3 +23,4 @@ export class Admin{
    }
    
 }
+

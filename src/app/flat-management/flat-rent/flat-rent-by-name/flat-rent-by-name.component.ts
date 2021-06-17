@@ -7,6 +7,7 @@ import { FlatRentService } from 'src/app/service/flatrent.service';
 @Component({
   selector: 'flatRentbyname',
   template:`
+  <body>
   <div class="container" >
   <h1> Flat Details By Name</h1>
   <hr/>
@@ -21,7 +22,7 @@ import { FlatRentService } from 'src/app/service/flatrent.service';
             <div>AMOUNT : {{flatrent?.amount | titlecase}} </div>
             <div> FLAT TYPE : {{flatrent?.flatType | titlecase}} </div>
             <div>
-            <button class="btn btn-danger " type="submit" (click)="onButtonClick()" [routerLink]="['./',flatrent.ownerName]"> VIEW
+            <button class="btn btn-danger " (click) = "on_click1()" type="submit" (click)="onButtonClick()" [routerLink]="['./',flatrent.ownerName]"> VIEW
             </button>
             </div>
           </div>
@@ -30,12 +31,14 @@ import { FlatRentService } from 'src/app/service/flatrent.service';
 
     </div>
   </div>
+  </body>
   <footer>
     <pagination-controls (pageChange)="p=$event"></pagination-controls>
     </footer>
     
     
  `,
+ styleUrls: ['./flat-rent-by-name.component.css'],
 })
 export class FlatRentByNameComponent implements OnInit{
   p: number=1;
@@ -61,11 +64,10 @@ export class FlatRentByNameComponent implements OnInit{
       this.customEvent.emit(this.flatrent);  // what ever is send  by default get stored into one javascript '$event'
     }
   
-    /* viewflat(){
-        console.log("************ view*********");
-      this.flatService.getFlatByName(this.activatedRoute.snapshot.params['fname']).subscribe(f => this.name = f);
-        //this.router.navigate(['/flats']);
-      } */
+    on_click1()
+    {
+    alert('Flat Rent By Name');
+    }
 
   
 

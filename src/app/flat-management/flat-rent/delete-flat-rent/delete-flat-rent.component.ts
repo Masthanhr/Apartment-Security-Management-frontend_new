@@ -7,6 +7,7 @@ import { FlatRentService } from 'src/app/service/flatrent.service';
 @Component({
   selector: 'deleteflatRent',
   template:`
+  <body>
   <div class="container" >
     <h1>Delete on Flat Details</h1>
     <hr/>
@@ -21,7 +22,7 @@ import { FlatRentService } from 'src/app/service/flatrent.service';
               <div>AMOUNT : {{flatrent?.amount | titlecase}} </div>
               <div> FLAT TYPE : {{flatrent?.flatType | titlecase}} </div>
               <div>
-              <button class="btn btn-danger " type="submit" (click)="deleteflat(flatrent.userId)" > DELETE 
+              <button class="btn btn-danger " (click) = "on_click1()" type="submit" (click)="deleteflat(flatrent.userId)" > DELETE 
               </button>
               </div>
             </div>
@@ -30,11 +31,14 @@ import { FlatRentService } from 'src/app/service/flatrent.service';
 
       </div>
     </div>
+    
+    </body>
     <footer>
     <pagination-controls (pageChange)="p=$event"></pagination-controls>
     </footer>
     
  `,
+ styleUrls: ['./delete-flat-rent.component.css'],
 })
 export class DeleteFlatRentComponent implements OnInit {
  
@@ -65,6 +69,11 @@ export class DeleteFlatRentComponent implements OnInit {
       this.router.navigate(['/navbar/flat-management/flatrent/rents']);
     }
 
+
+    on_click1()
+  {
+  alert('Deleted Successfully !!!!');
+  }
   
 
   

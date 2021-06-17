@@ -10,27 +10,31 @@ import { GuardService } from 'src/app/service/guard.service';
 
 @Component({
   selector: 'updateguardshift',
-  template: `<div class="col-md-6">
+  template: `
+  <body style="background-color:#C0C0C0">
+  <div  class = "container" style="width:550px"> 
  
   <form [formGroup]="newGuardForm" autocomplete="on" novalidate (ngSubmit)="updateGuardShift(newGuardForm.value)">
         
 
   <div class="form-group" >
     <label for="userId">UserId: </label>
+    <em *ngIf="newGuardForm.controls.userId?.errors?.pattern">Negative userId not allowed</em>
     <em *ngIf="(newGuardForm.controls.userId?.invalid) && (newGuardForm.controls.userId?.touched)">Required</em>
-        <input  id="userId" required type="number" class="form-control" formControlName="userId"  [(ngModel)]=guard.userId placeholder="Enter UserId..." />
+        <input  readonly id="userId" required  type="number" class="form-control" formControlName="userId"  [(ngModel)]=guard.userId placeholder="Enter UserId..." />
   </div>
 
   <div class="form-group" >
   <label for="name">name: </label>
+  <em *ngIf="newGuardForm.controls.name?.errors?.minlength">Enter Full Guard Number</em> 
   <em *ngIf="(newGuardForm.controls.name?.invalid) && (newGuardForm.controls.name?.touched)">Required</em>
-      <input  id="name" required type="text" class="form-control" formControlName="name"  [(ngModel)]=guard.name placeholder="Enter name..." />
+      <input  id="name" required type="text" class="form-control" formControlName="name"  [(ngModel)]=guard.name placeholder="Enter name..." minlength="3"/>
 </div>
 
 <div class="form-group" >
 <label for="time">time: </label>
 <em *ngIf="(newGuardForm.controls.time?.invalid) && (newGuardForm.controls.time?.touched)">Required</em>
-    <input  id="time" required type="text" class="form-control" formControlName="time"  [(ngModel)]=guard.time placeholder="Enter date..." />
+    <input  id="time" required type="time" class="form-control" formControlName="time"  [(ngModel)]=guard.time placeholder="Enter Time..." />
 </div>
 
 <div class="form-group" >
@@ -39,11 +43,12 @@ import { GuardService } from 'src/app/service/guard.service';
     <input  id="date" required type="date" class="form-control" formControlName="date"  [(ngModel)]=guard.date placeholder="Enter date..." />
 </div>
 
-  <button type="submit"  [disabled]=newGuardForm.invalid class="btn btn-primary">Update</button>
+
+  <button type="submit"  (click)=" on_click1()" [disabled]=newGuardForm.invalid class="btn btn-primary">Update</button>
   <button type="button"   class="btn btn-primary" (click)="cancel()">Cancel</button>
   </form>
   </div>
-
+</body>
   `,
   styles: [`em{float:right; color: #E05c65; padding-left-10px;`]
 },
@@ -77,9 +82,19 @@ export class UpdateGuardShiftComponent implements OnInit {
     });
   }
 
+  
+  on_click1()
+  {
+  alert('Updated Id Successfully');
+  }
+
   updateGuardShift(guard){
     console.log("***");
        this.guardService.updateGuardShift(this.guard).subscribe(pipe());
        this.router.navigate(['/navbar/guard-management/GuardShift']);
+  }
+
+  cancel() {
+    this.router.navigate(['/navbar/guard-management/GuardShift'])
   }
 }

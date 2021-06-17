@@ -1,3 +1,65 @@
-<p>
-  add-flat works!
-</p>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+
+<body>
+  <div class="container" style="width:550px; background-color: lightslategray">
+    <div style="text-align:center;">
+      <h3><b>New Flat Registration</b></h3>
+    </div>
+
+    <form [formGroup]="createForm" autocomplete="on" novalidate (ngSubmit)="addFlat(createForm.value)">
+
+
+      <div class="form-group">
+        <label for="userId">User Id:</label>
+        <input id="userId" required type="number" min='0' class="form-control" formControlName="userId"
+          (ngModel)=flat?.userId [pattern]="'^[0-9]+$'" placeholder="Enter User Id..." />
+        <div *ngIf="(createForm.controls.userId?.invalid) && (createForm.controls.userId?.touched)"
+          class="alert alert-danger">Required User Id</div>
+          <div *ngIf="createForm.controls.userId?.errors?.pattern" class="alert alert-danger">Negative userId is not allowed</div>
+      </div>
+
+      <div class="form-group">
+        <label for="ownerName">Owner Name:</label>
+        <input id="ownerName" required type="text" class="form-control" formControlName="ownerName"
+          (ngModel)=flat.ownerName placeholder="Enter Owner Name..." />
+        <div *ngIf="(createForm.controls.ownerName?.invalid) && (createForm.controls.ownerName?.touched)"
+          class="alert alert-danger">Required Owner Name</div>
+      </div>
+
+      <div class="form-group">
+        <label for="flatNo">Flat No:</label>
+
+        <input id="flatNo" required type="text" class="form-control" formControlName="flatNo" (ngModel)=flat.flatNo
+          placeholder="Enter Flat No..." />
+        <div *ngIf="(createForm.controls.flatNo?.invalid) && (createForm.controls.flatNo?.touched)"
+          class="alert alert-danger">Required Flat No</div>
+      </div>
+
+      <div class="form-group">
+        <label for="floorNo">Floor No:</label>
+
+        <input id="floorNo" required type="text" class="form-control" formControlName="floorNo" (ngModel)=flat.floorNo
+          placeholder="Enter Floor No..." />
+        <div *ngIf="createForm.controls.floorNo?.invalid && (createForm.controls.floorNo?.touched)"
+          class="alert alert-danger">Required Floor No</div>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="flatType">Flat Type:</label>
+        <input id="flatType" required type="text" class="form-control" formControlName="flatType"
+          (ngModel)=flat.flatType placeholder="Enter Flat Type..." />
+        <div *ngIf="createForm.controls.flatType?.invalid && (createForm.controls.flatType?.touched)"
+          class="alert alert-danger">Required Flat Type</div>
+      </div>
+
+
+      <button type="submit" (click)=" on_click()" [disabled]=createForm.invalid class="btn btn-primary">ADD</button>&nbsp;
+      <button type="reset" class="btn btn-primary" style="margin-left: 5%;">Reset</button>
+      <button type="button" class="btn btn-primary" (click)="cancel()" style="margin-left: 5%;">Cancel</button>
+    </form>
+  

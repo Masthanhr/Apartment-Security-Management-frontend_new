@@ -5,11 +5,19 @@ import { VisitorService } from 'src/app/service/visitor.service';
 
 @Component({
   selector: 'visitor',
-  template: `<h2>Visitor Component</h2>
-            <div  *ngFor="let visitor of visitors | paginate: {itemsPerPage: 1 ,currentPage:p}"> 
+  template: `
+  <body style="background-color:#C0C0C0">
+  
+          <div class="container">
+          <h2>Visitor Component</h2>
+            <div  *ngFor="let visitor of visitors | paginate: {itemsPerPage: 4 ,currentPage:p}"> 
             <allvisitor [visitorinfo] = visitor (customEvent) = "parentFunction($event)"></allvisitor>
             </div>
-            <pagination-controls (pageChange)="p=$event"></pagination-controls>`
+            <div style="background-color:#4682B4">
+            <pagination-controls (pageChange)="p=$event"></pagination-controls>
+            </div>
+            </div>
+            </body>`
  
 })
 export class VisitorComponent {

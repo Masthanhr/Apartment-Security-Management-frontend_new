@@ -13,8 +13,12 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+
   Logout(){
+    localStorage.removeItem('isAdmin');
     this.router.navigate([''])
   }
+
+ 
 
 }

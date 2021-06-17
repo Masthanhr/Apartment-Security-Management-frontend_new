@@ -1,3 +1,27 @@
-<p>
-  all-flats works!
-</p>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="container">
+    <h1>Flat Details</h1>
+    <hr />
+    <div class="row row-cols-2">
+      <div
+        *ngFor="
+          let flats of flats | paginate: { itemsPerPage: 4, currentPage: p }
+        "
+        class="col-md-4"
+      >
+        <allflats
+          [flatdata]="flats"
+          (customEvent)="parentFunction($event)"
+        ></allflats>
+      </div>
+    </div>
+  </div>
+</body>
+
+    <footer style="background-color:black">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </footer>
+  

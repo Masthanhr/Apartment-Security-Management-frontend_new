@@ -37,7 +37,10 @@ export class AddSecurityComponent implements OnInit {
     cancel() {
       this.router.navigate(['/navbar/securityM/security'])
     }
-
+    on_click()
+    {
+    alert('Added Successfully');
+    }
 
 
  }

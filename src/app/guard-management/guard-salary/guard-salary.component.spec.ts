@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GuardSalaryComponent } from './guard-salary.component';
+import { GuardSalarySComponent } from './guard-salary.component';
 
-describe('GuardSalaryComponent', () => {
-  let component: GuardSalaryComponent;
-  let fixture: ComponentFixture<GuardSalaryComponent>;
+describe('GuardSalarySComponent', () => {
+  let component: GuardSalarySComponent;
+  let fixture: ComponentFixture<GuardSalarySComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GuardSalaryComponent ]
+      declarations: [ GuardSalarySComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GuardSalaryComponent);
+    fixture = TestBed.createComponent(GuardSalarySComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

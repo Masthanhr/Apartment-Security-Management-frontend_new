@@ -38,5 +38,16 @@ export class DomesticComponent implements OnInit{
         // this.domestic=this.help.getAllHelp();
     this.domesticService.getAllHelp().subscribe(domArr => this.domestic = domArr);
     }
+
+    on_click1()
+    {
+    alert('By Id');
+    }
+
+    on_click2()
+    {
+    alert('By Name');
+    }
+
     
 }

@@ -1,12 +1,14 @@
-.col {
+
+
+  .col {
     width: 700px;
     height: 100px;
-    transition: width 1s, height 3s;
+    transition: width 1s, height 2s;
   transition-delay: 0.5s;
   }
   
   .col:hover {
     width: 500px;
-    height: 150px;
+    height: 200px;
    
   }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UpdateGuardtrainComponent } from './update-guardtrain.component';
+import { UpdateGuardTrainComponent } from './update-guardtrain.component';
 
-describe('UpdateGuardtrainComponent', () => {
-  let component: UpdateGuardtrainComponent;
-  let fixture: ComponentFixture<UpdateGuardtrainComponent>;
+describe('UpdateGuardTrainComponent', () => {
+  let component: UpdateGuardTrainComponent;
+  let fixture: ComponentFixture<UpdateGuardTrainComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UpdateGuardtrainComponent ]
+      declarations: [ UpdateGuardTrainComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UpdateGuardtrainComponent);
+    fixture = TestBed.createComponent(UpdateGuardTrainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

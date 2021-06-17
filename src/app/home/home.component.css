@@ -1,0 +1,40 @@
+#img1 {
+    border-radius: 8px;
+      transition: width 2s, height 2s, transform 2s;
+    }
+    
+    #img1:hover {
+      width: 300px;
+      height: 300px;
+      /* transform: rotateY(360deg); */
+      transform: rotateY(360deg);
+  
+    }
+  
+    p:hover{
+          transition: all;
+    }
+  
+   hr{
+     background-color: aliceblue;
+   }
+  
+  
+  
+   /* FOOTER */
+  
+   footer{
+     background-color: black;
+   }
+   h3,li,p,a{
+     color: white;
+   }
+  
+   .bi{
+     color: red;
+   }
+   #marquee1{
+     background-color: black;
+     color: white;
+     margin-top: 1%;
+   }

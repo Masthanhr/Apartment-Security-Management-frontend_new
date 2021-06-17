@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { pipe } from 'rxjs';
 import { crent } from 'src/app/model/flatrent.model';
@@ -32,27 +32,30 @@ import { FlatRentService } from 'src/app/service/flatrent.service';
 
   <div class="form-group" >
   <label for="flatNo">Flat No:</label>
-  <em *ngIf="(updateForm.controls.flatNo?.invalid) && (updateForm.controls.flatNo?.touched)">Required</em>
+ 
       <input  id="flatNo" required type="text"   class="form-control" formControlName="flatNo"  [ngModel]=flats?.flatNo placeholder="Enter Flat No..." />
+      <div *ngIf="(updateForm.controls.flatNo?.invalid) && (updateForm.controls.flatNo?.touched)" class="alert alert-danger">Required</div>
 </div>
 
  
 <div class="form-group" >
 <label for="amount">Amount:</label>
-<em *ngIf="updateForm.controls.amount?.invalid && (updateForm.controls.amount?.touched)">Required</em>
-<input  id="amount"  required type="text" class="form-control" formControlName="amount" [ngModel]=flats?.amount placeholder="Enter Amount..." />
+
+<input  id="amount"  required type="number" [pattern]="'^[0-9]+$'" class="form-control" formControlName="amount" [ngModel]=flats?.amount placeholder="Enter Amount..." />
+<div *ngIf="updateForm.controls.amount?.invalid && (updateForm.controls.amount?.touched)" class="alert alert-danger">Required</div>
 </div>
 
 
 
 <div class="form-group" >
 <label for="flatType">Flat Type:</label>
-<em *ngIf="updateForm.controls.flatType?.invalid && (updateForm.controls.flatType?.touched)">Required</em>
+
 <input  id="flatType"  required type="text" class="form-control" formControlName="flatType" [ngModel]=flats?.flatType placeholder="Enter Flat Type..." />
+<div *ngIf="updateForm.controls.flatType?.invalid && (updateForm.controls.flatType?.touched)" class="alert alert-danger">Required</div>
 </div>
 
 
-  <button type="submit"  [disabled]=updateForm.invalid class="btn btn-warning">Update</button>&nbsp;
+  <button type="submit" (click) = "on_click1()"  [disabled]=updateForm.invalid class="btn btn-warning">Update</button>&nbsp;
   <button type="button"   class="btn btn-primary" (click)="cancel()">Cancel</button>
   </form>
   </div>
@@ -82,11 +85,11 @@ export class UpdateFlatRentFormComponent implements OnInit {
 
     this.updateForm = new FormGroup
     ({
-          userId : new FormControl(),
-          ownerName : new FormControl(),
-          flatNo : new FormControl(),
-          amount : new FormControl(),
-          flatType : new FormControl()
+          userId : new FormControl(null,Validators.required),
+          ownerName : new FormControl(null,Validators.required),
+          flatNo : new FormControl(null,Validators.required),
+          amount : new FormControl(null,Validators.required),
+          flatType : new FormControl(null,Validators.required)
 
     });
 
@@ -106,6 +109,11 @@ export class UpdateFlatRentFormComponent implements OnInit {
 
   cancel() {
     this.router.navigate(['/navbar/flat-management/flatrent/update'])
+  }
+
+  on_click1()
+  {
+  alert('Updated Successfully !!!!');
   }
 }
 

@@ -6,22 +6,29 @@ import { VehicleService } from 'src/app/service/vehicle.service';
 
 @Component({
   selector: 'vehicle',
-  template: `<div class="container" style="background-color:blue" >
+  template: `
+  <body style="background-color:#C0C0C0">
+  <div class="container" >
                 <h1>Vehicle Details</h1>
                 <hr/>
                 <div  class= "row row-cols-2">
-                <div  *ngFor="let vehicles of vehicles" class="col-md-4 ">  
+                <div  *ngFor="let vehicles of vehicles | paginate: {itemsPerPage: 5,currentPage:p}" class="col-md-4 ">  
                         <allvehicles #allvehicle [vehicledata] = vehicles  (customEvent)="parentFunction($event)" ></allvehicles>    
                       <!-- <div>
                           {{allvehicle.i}}
                       </div> -->
 
                 </div>
-              </div>`
+                </div>
+                <div style="background-color:green">
+                <pagination-controls (pageChange)="p=$event"></pagination-controls>
+                </div>
+              </div>
+              </body>`
 
 })
 export class VehicleComponent {
-
+  p: number=1;
   parentFunction(event) {
     console.log(event);
   }

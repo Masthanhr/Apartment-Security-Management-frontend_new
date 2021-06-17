@@ -1,3 +1,39 @@
-<p>
-  guardsalary-by-id works!
-</p>
+<body style="background-color:#C0C0C0">
+  <div *ngIf="errorMessage" class="alert alert-danger">
+  {{errorMessage?.error?.error | json}}
+  </div>
+  
+  <div>
+
+<div *ngIf="guard" class="well hoverwell thumbnail py-3 my-3">
+<div style="background-color:#C0C0C0">
+  <div  class = "container" style="text-align: center; width:1100px;">
+  <div class="well hoverwell thumbnail py-3 my-3">
+  <table class="table table-bordered">
+  <tr style="background-color: yellowgreen;">
+  <th>USER ID</th>
+  <th>GUARD TRAINIE NAME</th>
+  <th>AMOUNT </th>
+  <th>STATUS</th>
+  <th>DATE</th>
+  </tr>
+  
+  <tr style="text-align: center;">    
+  <td>  {{guard?.userId}} </td>
+    <td> {{guard?.name | titlecase}}</td>
+    <td> {{guard?.amount}}</td>
+    <td>{{guard?.status | titlecase}}</td>
+    <td> {{guard?.date }}</td>
+    <td>
+    <button [class]=buttonStyle (click)=" on_click1()" [routerLink]="['/navbar/guard-management/GuardSalary/delete',guard?.userId]"> Delete </button>
+    <button [class]=buttonStyle (click)="updateGuardSalary(guard.userId)" >Update </button>
+    
+    </td>
+    </tr>
+    </table>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+</body>

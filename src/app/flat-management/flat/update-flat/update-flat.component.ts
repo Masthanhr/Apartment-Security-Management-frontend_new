@@ -8,11 +8,12 @@ import { FlatService } from 'src/app/service/flat.service';
 @Component({
   selector: 'updateflat',
   template:`
+  <body>
   <div class="container" >
     <h1>Update on Flat Details</h1>
     <hr/>
     <div  class= "row row-cols-2">
-    <div  *ngFor="let flats of flats  | paginate: {itemsPerPage: 6,currentPage:p}" class="col-md-4 " > 
+    <div  *ngFor="let flats of flats  | paginate: {itemsPerPage: 4,currentPage:p}" class="col-md-4 " > 
    
                            
           <div class="well hoverwell thumbnail py-3 my-3" >
@@ -29,16 +30,18 @@ import { FlatService } from 'src/app/service/flat.service';
             </div>
           </div>
         
-
       </div>
-    </div>
+      </div>
+    
+    </body>
 
-    <footer>
+    <footer >
     <pagination-controls (pageChange)="p=$event"></pagination-controls>
     </footer>
     
     
  `,
+ styleUrls: ['./update-flat.component.css'],
 })
 export class UpdateFlatComponent implements OnInit {
 

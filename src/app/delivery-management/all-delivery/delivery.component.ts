@@ -1,36 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import { IDelivery } from 'src/app/model/delivery.model';
-import { DeliveryService } from 'src/app/service/delivery.service';
+
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { SELECT_VALUE_ACCESSOR } from '@angular/forms/src/directives/select_control_value_accessor';
 
 @Component({
-  selector: 'delivery',
-  template:  `<h1>Delivery Management</h1><hr/>
-              <div *ngFor="let delivery of deliveries">
-              <delivery-list [deliveryDetails]=delivery (customEvent)= "parentFunction($event)" ></delivery-list>
-              </div>
-              `
-              ,
+  selector: 'delivery-list',
+  templateUrl: './delivery.component.html',
+ 
 })
-export class DeliveryComponent implements OnInit {
+export class DeliveryListComponent {
+  @Input() deliveryDetails;
 
-  private deliveries : IDelivery[];
-  constructor(private deliveryService : DeliveryService){
-    console.log("delivery clicked....")
-    // this.deliveries = this.deliveryService.getDelivery();
+  @Output() customEvent=new EventEmitter();
 
-    this.deliveryService.getDelivery().subscribe(deliveryarr => this.deliveries=deliveryarr)
+  isDisabled= true;
+  buttonStyle="btn btn-primary";
 
-  }
-  ngOnInit(): void {
-    this.deliveryService.getDelivery().subscribe(deliveryarr => this.deliveries=deliveryarr)
-  }
-  parentFunction(event) {
-    console.log(event);
+  myFunction() {
+    this.isDisabled = false;
+    this.buttonStyle= "btn btn-success";
   }
 
+  onClick() {
+    console.log("Name Calling..");
+    this.customEvent.emit(this.deliveryDetails.ownerName)
+  }
+
+  on_click1()
+   {
+   alert('Delivery By Id');
+   }
+
+   on_click2()
+   {
+   alert('Delivery By Name');
+   }
 }
-
-
 
 
 

@@ -39,7 +39,15 @@ export class AllVehicleComponent {
    onButtonClick(){
      this.customEvent.emit(this.vehicledata);  // what ever is send  by default get stored into one javascript '$event'
    }
+   on_click1()
+   {
+   alert('Vehicle By Id');
+   }
 
+   on_click2()
+   {
+   alert('Vehicle By Name');
+   }
   
 
   

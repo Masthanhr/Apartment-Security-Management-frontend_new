@@ -10,7 +10,7 @@ import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'user',
   template: `<div class= "row-auto">
-
+ <body style="background-color:#C0C0C0">
    <div class="well hoverwell thumnail">
    <table class="table table-bordered">
               <tr>
@@ -35,17 +35,17 @@ import { UserService } from 'src/app/service/user.service';
               <td>{{userinfo?.roleId}}</td>
              
      <td >
-      <button class="btn btn-primary" title="delete user" (click)=delete(userinfo.userId) >Delete</button>
+      <button class="btn btn-primary" title="delete user" (click)=" on_click1()" (click)=delete(userinfo.userId) >Delete</button>
      </td>
 
    <td>
-     <button class="btn btn-primary" title="update user" (click)=updateUser(userinfo.userId)>Update</button>
+     <button class="btn btn-primary" title="update user" (click)=" on_click()" (click)=updateUser(userinfo.userId)>Update</button>
    </td>
    </tr>
                
    </table>
    </div>
-   </div> 
+   </body> 
 `,
 })
 
@@ -70,7 +70,7 @@ export class UserByIdComponent {
 
   onClick() {
     // this.customEvent.emit(this.visitorinfo)
-    alert("Verify your Id")
+    alert("User By Id")
     console.log("message is printed")
   };
 
@@ -86,6 +86,15 @@ export class UserByIdComponent {
     this.router.navigateByUrl("/navbar/user-management/updateuser/" + uid)
   }
 
+  on_click()
+    {
+    alert('Do you want to Update!!!!!!!!!!');
+    }
+
+    on_click1()
+    {
+    alert('Deleted Successfully!!!');
+    }
 
 
 }

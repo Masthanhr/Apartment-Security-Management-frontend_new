@@ -11,7 +11,7 @@ import { VisitorService } from 'src/app/service/visitor.service';
 @Component({
   selector: 'update-visitor',
   template: `
-  
+  <body style="background-color:#C0C0C0">
   <div class = "container" style= "width:550px">
   <div style ="text-align:center;">
   <h2><b>Update Visitor Details</b></h2>
@@ -63,8 +63,10 @@ import { VisitorService } from 'src/app/service/visitor.service';
      </div>
      </form>
    </div>
+   </body>
    
 `,
+styles: ['em{float:right; color: #E05c65; padding-left-10px;}']
 })
 export class UpdateVisitorComponent  implements OnInit {
  

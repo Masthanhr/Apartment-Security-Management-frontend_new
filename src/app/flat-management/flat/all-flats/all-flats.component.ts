@@ -6,21 +6,13 @@ import { FlatService } from 'src/app/service/flat.service';
   
   @Component({
     selector: 'flats',
-    template: `<div class="container" >
-                  <h1>Flat Details</h1>
-                  <hr/>
-                  <div  class= "row row-cols-2">
-                  <div  *ngFor="let flats of flats  | paginate: {itemsPerPage: 6,currentPage:p}" class="col-md-4 " >  
-                   
-                          <allflats  [flatdata] = flats  (customEvent)="parentFunction($event)" ></allflats>   
-                  </div>
-                 
-                </div>
-
-                <footer>
-                <pagination-controls (pageChange)="p=$event"></pagination-controls>
-                </footer>
-                `
+    templateUrl: './all-flats.component.html'
+    
+    
+                
+                ,
+                
+                styleUrls: ['./all-flats.component.css'],
                 
 
   

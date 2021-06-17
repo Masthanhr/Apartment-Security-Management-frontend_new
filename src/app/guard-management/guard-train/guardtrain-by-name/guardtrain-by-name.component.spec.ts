@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GuardtrainByNameComponent } from './guardtrain-by-name.component';
+import { GuardTrainByNameComponent } from './guardtrain-by-name.component';
 
-describe('GuardtrainByNameComponent', () => {
-  let component: GuardtrainByNameComponent;
-  let fixture: ComponentFixture<GuardtrainByNameComponent>;
+describe('GuardTrainByNameComponent', () => {
+  let component: GuardTrainByNameComponent;
+  let fixture: ComponentFixture<GuardTrainByNameComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GuardtrainByNameComponent ]
+      declarations: [ GuardTrainByNameComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GuardtrainByNameComponent);
+    fixture = TestBed.createComponent(GuardTrainByNameComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

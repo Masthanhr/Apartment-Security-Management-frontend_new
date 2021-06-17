@@ -29,10 +29,10 @@ import { User } from 'src/app/model/user.model';
               <td>{{userinfo?.emailId}}</td>
               <td>{{userinfo?.roleId}}</td>
               <td>
-                <button [class]=buttonStyle (click) = "onClick()" [routerLink]="['/navbar/user-management/user',userinfo.firstName]">  View by Name  </button>    
+                <button [class]=buttonStyle (click) = " on_click2()" [routerLink]="['/navbar/user-management/user',userinfo.firstName]">  View by Name  </button>    
               </td>
               <td>
-                <button [class]=buttonStyle (click) = "onClick()" [routerLink]="['/navbar/user-management/user/id',userinfo.userId]">  View by ID  </button> 
+                <button [class]=buttonStyle (click) = "on_click1()" [routerLink]="['/navbar/user-management/user/id',userinfo.userId]">  View by ID  </button> 
               </td>
               </tr>
                
@@ -64,4 +64,14 @@ export class AllUserComponent {
 
 
   };
+
+  on_click1()
+    {
+    alert('User By Id');
+    }
+
+    on_click2()
+    {
+    alert('User By Name');
+    }
 }

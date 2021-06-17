@@ -1,7 +1,8 @@
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #17a2b8;
+    background-color:antiquewhite;
     height: 100vh;
   }
   #login .container #login-row #login-column #login-box {
@@ -17,3 +18,18 @@ body {
   #login .container #login-row #login-column #login-box #login-form #register-link {
     margin-top: -85px;
   }
+
+  h2, label{
+    color: white;
+  }
+  .form-group{
+    color: white;
+  }
+
+  h1,b{
+    text-align: center;
+    background-color: black;
+    color: white;
+    
+  }
+ 

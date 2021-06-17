@@ -9,7 +9,7 @@ import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'user',
   template: `<div class= "row-auto">
-  
+<body style="background-color:#C0C0C0">
    <div class="well hoverwell thumnail">
    <table class="table table-bordered">
               <tr>
@@ -40,7 +40,7 @@ import { UserService } from 'src/app/service/user.service';
               </table>
 
    </div> 
-   </div>
+   </body>
 `,
 })
 

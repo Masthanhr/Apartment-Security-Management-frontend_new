@@ -1,38 +1,29 @@
-<div class="container">
-  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+
+  <nav class="navbar navbar-expand-sm  bg-info" >
   
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <a class="nav-link" [routerLink]="['./visitors']"> All Visitor <span class="sr-only">(current)</span></a>
+<div class="container">
+  <ul>
+    <li>
+      <a class="nav-link" [routerLink]="['./visitors']">All Visitor</a>
     </li>
-
-    <li class="nav-item active">
-      <a class="nav-link" [routerLink]="['./visitors/new']"> Add Visitor <span class="sr-only">(current)</span></a>
-    </li>
-
-
-
-
   </ul>
- 
+
+  <ul>
+    <li>
+      <a class="nav-link" [routerLink]="['./visitors/new']">Add Visitor</a
+      >
+    </li>
+  </ul>
 </div>
 </nav>
 
-</div>
+
 <router-outlet></router-outlet>
 
 
 
-<!-- <li class="nav-item active">
-    <a class="nav-link" [routerLink]="['/navbar/user']"> All User <span class="sr-only">(current)</span></a>
-  </li>
-
-  <li class="nav-item active">
-  <a class="nav-link" [routerLink]="['/navbar/user/new']"> Add User <span class="sr-only">(current)</span></a>
-</li> -->

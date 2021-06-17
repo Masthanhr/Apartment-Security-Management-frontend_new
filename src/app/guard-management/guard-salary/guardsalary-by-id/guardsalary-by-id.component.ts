@@ -6,29 +6,7 @@ import { GuardService } from 'src/app/service/guard.service';
 
 @Component({
   selector: 'guardsalarybyid',
-  template: `
-  <div *ngIf="errorMessage" class="alert alert-danger">
-  {{errorMessage?.error?.error | json}}
-  </div>
-
-  <div>
-  <div *ngIf="guard" class="well hoverwell thumbnail py-3 my-3">
-      <div > USER ID : {{guard?.userId}} </div>
-      <div>GUARD TRAINIE NAME : {{guard?.name | titlecase}} </div>
-      <div>AMOUNT : {{guard?.amount}}</div>
-      <div>STATUS : {{guard?.status | titlecase}} </div>
-      <div>DATE : {{guard?.date }} </div>
-
-      <div class="row">
-      <div class="col-md-1">
-      <button class="btn btn-primary" title="delete GuardSalary"  [routerLink]="['/navbar/guard-management/GuardSalary/delete',guard?.userId]">Delete</button>
-      
-      </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      <div class="col-md-1">
-      <button class="btn btn-primary" title="update GuardSalary" (click)="updateGuardSalary(guard.userId)">Update</button>
-      </div>
-  </div>
-</div>`
+  templateUrl:'guardsalary-by-id.component.html',
 
 })
 export class GuardSalaryByIdComponent {
@@ -36,6 +14,16 @@ export class GuardSalaryByIdComponent {
 
   private guard: GuardSalary;
   private delete: any;
+
+  on_click1()
+  {
+  alert('Deleted Id Successfully');
+  }
+  on_click2()
+  {
+  alert('Updated Id Successfully');
+  }
+
 
 
   constructor(private guardService : GuardService, private activatedRoute: ActivatedRoute, private router: Router){

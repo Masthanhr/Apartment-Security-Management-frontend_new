@@ -7,6 +7,7 @@ import { VehicleService } from 'src/app/service/vehicle.service';
 @Component({
   selector: 'vehiclebyname',
   template:` 
+  <body style="background-color:#C0C0C0">
   <div *ngIf="errorMessage" class="alert alert-danger">
   {{errorMessage | json}}
   </div>
@@ -24,7 +25,7 @@ import { VehicleService } from 'src/app/service/vehicle.service';
 
       <div class="row">
       <div class="col-md-1">
-      <button class="btn btn-primary" title="delete vehicle"  [routerLink]="['/navbar/vehicle-management/deletevehicle',vehicledata?.name]">Delete</button>
+      <button class="btn btn-danger" title="delete vehicle"  [routerLink]="['/navbar/vehicle-management/deletevehicle',vehicledata?.name]">Delete</button>
       
       </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
       <div class="col-md-1">
@@ -33,7 +34,8 @@ import { VehicleService } from 'src/app/service/vehicle.service';
       </div>
       </div>
       </div>
-      </div>`,
+      </div>
+      </body>`,
 })
 export class VehicleByNameComponent implements OnInit{
     

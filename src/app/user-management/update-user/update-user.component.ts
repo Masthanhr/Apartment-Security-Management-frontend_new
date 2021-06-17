@@ -7,7 +7,7 @@ import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'update-user',
   template: `
-  
+  <body style="background-color:#C0C0C0">
   <div class = "container" style= "width:550px">
   <div style ="text-align:center;">
   <h2><b>Update User Details</b></h2>
@@ -63,12 +63,11 @@ import { UserService } from 'src/app/service/user.service';
     <input  id="roleId" type="text" required class="form-control" formControlName="roleId"  [ngModel]=user?.roleId placeholder="Name of roleId..." />
   </div>
 
-  <button type="submit"  [disabled]=updateForm.invalid class="btn btn-primary">Update</button>
+  <button type="submit" (click)=" on_click()"  [disabled]=updateForm.invalid class="btn btn-primary" >Update</button>
   <button type="button"   class="btn btn-primary" (click)="cancel()">Cancel</button>
   </form>
-
-  
   </div>
+  </body>
    
 `,
 })
@@ -105,6 +104,11 @@ export class UpdateUserComponent  implements OnInit {
          this.router.navigate(['/navbar/user-management/user']);
          console.log(newUser)
          console.log("updated user******")
+    }
+
+    on_click()
+    {
+    alert('Updated Successfully');
     }
   
 }

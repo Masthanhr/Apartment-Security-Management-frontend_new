@@ -9,8 +9,9 @@ import { SecurityService } from 'src/app/service/security.service';
 
 @Component({
   selector: 'update-Security',
-  template: `<div class="col-md-6">
- 
+  template: `
+  <body style="background-image: url('/assets/security/security1.jpeg');" >
+  <div class="container">
   <form [formGroup]="secureForm" autocomplete="off" novalidate (ngSubmit)="updateSecurity(secureForm.value)">
   <div class="form-group" >
     <label for="msgId">Message Id:</label>
@@ -19,18 +20,21 @@ import { SecurityService } from 'src/app/service/security.service';
   <div class="form-group" >
     <label for="message">Message:</label>
     <em *ngIf="secureForm.controls.message?.invalid && (secureForm.controls.message?.touched)">Required</em>
-        <input  id="message" type="text" required class="form-control" formControlName="message" [ngModel]=secur?.message />
+    <em *ngIf="secureForm.controls.message?.errors?.minlength">Enter Full Message</em>      
+    <input  id="message" type="text" required class="form-control" formControlName="message" required minlength="4" [ngModel]=secur?.message />
   </div>
   <div class="form-group" >
   <em *ngIf="secureForm.controls.alert?.invalid && (secureForm.controls.alert?.touched)">Required</em>
-    <label for="alert">Alert:</label>
-      <input id="alert" required type="text" class="form-control" formControlName="alert" [ngModel]=secur?.alert />
+  <em *ngIf="secureForm.controls.alert?.errors?.minlength">Enter Full Alert Message</em>
+  <label for="alert">Alert:</label>
+      <input id="alert" required type="text" class="form-control" formControlName="alert" required minlength="4" [ngModel]=secur?.alert />
   </div>
   
   <button type="submit"  [disabled]=secureForm.invalid class="btn btn-primary">Update</button>
   <button type="button"   class="btn btn-primary" (click)="cancel()">Cancel</button>
   </form>
   </div>
+  </body>
 
   `,
   styles: [`em{float:right; color: #E05c65; padding-left-10px;`]

@@ -6,37 +6,22 @@ import { GuardService } from 'src/app/service/guard.service';
 
 @Component({
   selector: 'guardtrainbyid',
-  template: `
-  <div *ngIf="errorMessage" class="alert alert-danger">
-  {{errorMessage?.error?.error | json}}
-  </div>
-
-  <div>
-  <div *ngIf="guard" class="well hoverwell thumbnail py-3 my-3">
-      <div > USER ID : {{guard?.userId}} </div>
-      <div>GUARD TRAINIE NAME : {{guard?.name | titlecase}} </div>
-      <div>DATE : {{guard?.date | titlecase}} </div>
-      <div>MOBILE NO : {{guard?.mobileNo | titlecase}} </div>
-      <div>STATUS : {{guard?.status | titlecase}} </div>
-      <div>TIMEING : {{guard?.timeing | titlecase}} </div>
-
-      <div class="row">
-      <div class="col-md-1">
-      <button class="btn btn-primary" title="delete GuardTrain"  [routerLink]="['/navbar/guard-management/GuardTraining/delete',guard?.userId]">Delete</button>
-      
-      </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      <div class="col-md-1">
-      <button class="btn btn-primary" title="update GuardTrain" (click)="updateGuardTrain(guard.userId)">Update</button>
-      </div>
-  </div>
-</div>`
-
+  templateUrl:'./guardtrain-by-id.component.html',
 })
 export class GuardTrainByIdComponent {
 
   private guard: IGuard;
   private delete: any;
   private errorMessage;
+
+  on_click1()
+  {
+  alert('Deleted Id Successfully');
+  }
+  on_click2()
+  {
+  alert('Updated Id Successfully');
+  }
 
 
 

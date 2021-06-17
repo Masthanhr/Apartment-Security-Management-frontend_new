@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+</head>
+
+<body>
+  <div class="card-body">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card text-dark bg-secondary card-signin " >
+                <div class="card-body">
+                    
+  
+  <div class="container" style="width:550px">
+    <div style="text-align:center;">
+      <h2><b>Registeration Form</b></h2>
+    </div>
+    <div class="col-md-15" id="registration">
+
+      <form [formGroup]="registrationForm" autocomplete="off" novalidate (ngSubmit)="validate(registrationForm.value)">
+        <div class="form-group">
+          <label for="firstName">First Name :</label>
+          <input id="firstName" type="text" required class="form-control" formControlName="firstName" [ngModel]=userData.firstName
+            placeholder="Enter your firstName" >
+          <em *ngIf="registrationForm.controls.firstName?.invalid && (registrationForm.controls.firstName?.touched)">
+            firstName can't be empty. </em>
+          <div id="errfirstName"></div>
+        </div>
+        <br>
+
+
+        <div class="form-group">
+          <label for="lastName">Last Name :</label>
+          <input id="lastName" type="text" required class="form-control" formControlName="lastName" [ngModel]=userData.lastName
+            placeholder="Enter your lastName" />
+          <em *ngIf="registrationForm.controls.lastName?.invalid && (registrationForm.controls.lastName?.touched)">
+            lastName can't be empty. </em>
+          <div id="errlastName"></div>
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="password">password </label>
+          <input type="password" class="form-control" formControlName="password" pattern=".{8,}" required
+            title="8 characters minimum" (ngModel)=userData.password placeholder=" Enter Valid password" />
+            <em id="errfirstName" style="color:  white; font-size: large;"></em>  
+            <em *ngIf="registrationForm.controls.password?.invalid && (registrationForm.controls.password?.touched)"  
+              style="font-size: medium; color:  white"> Password must have atleast 8 characters</em>
+
+            
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="email">Email ID : </label>
+          <input id="email" type="email" class="form-control"  formControlName="emailId"  
+          pattern="[a-z0-9._%+-]+@[a-zp0-9.-]+\.[a-z]{2,4}$" [ngModel]=userData.email
+            placeholder=" Enter your email id." required >
+          <em *ngIf="registrationForm.controls.emailId?.invalid && (registrationForm.controls.emailId?.touched)"> Invalid Email-Id </em>
+          <div id="erremailId"></div>
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="adminId">Admin ID : </label>
+          <input id="adminId" required type="email" class="form-control" formControlName="adminId" [ngModel]=userData.adminId
+            placeholder=" Enter your adminId id." />
+          <em *ngIf="registrationForm.controls.adminId?.invalid && (registrationForm.controls.adminId?.touched)">
+            AdminId can't be empty. </em>
+          <div id="erradminId"></div>
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="phoneNo">MobileNo </label>
+          <input id="phoneNo" required type="tel"  min="0"  minlength="10" maxlength="10" class="form-control" formControlName="phoneNo"
+          pattern="[0-9]{10}" [ngModel]=userData.phoneNo placeholder=" Enter your phone no." />
+          <em *ngIf="registrationForm.controls.phoneNo?.invalid && (registrationForm.controls.phoneNo?.touched)">
+           Invalid phoneNo . </em>
+          <div id="errNo"></div>
+        </div>
+        <br>
+
+
+        <button type="submit" [disabled]=registrationForm.invalid class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-primary" style="margin-left: 2%;">Reset</button>
+
+        <div class="container">
+          <h5 style="margin-left: 50px; margin-top: 20px;">Existing User? <a [routerLink]="['']" style="color: indigo;">click here</a></h5>
+          </div>
+      </form>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>

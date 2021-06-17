@@ -8,6 +8,7 @@ import { FlatRentService } from 'src/app/service/flatrent.service';
 @Component({
   selector: 'updateflatRent',
   template:`
+  <body>
   <div class="container" >
     <h1>Update on Flat Rent Details</h1>
     <hr/>
@@ -26,17 +27,20 @@ import { FlatRentService } from 'src/app/service/flatrent.service';
               </button>
               </div>
             </div>
-          </div>
+        
         
 
       </div>
     </div>
+    </div>
+    </body>
     <footer>
     <pagination-controls (pageChange)="p=$event"></pagination-controls>
     </footer>
-    
+   
     
  `,
+ styleUrls: ['./update-flat-rent.component.css'],
 })
 export class UpdateFlatRentComponent implements OnInit {
   p: number=1;

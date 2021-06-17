@@ -9,7 +9,7 @@ import { UserService } from 'src/app/service/user.service';
   @Component({
     selector: 'create-user',
     template: `
-    
+  <body style="background-color:#C0C0C0">
     <div class = "container" style= "width:550px">
     <div style ="text-align:center;">
     <h2><b>New User Registeration</b></h2>
@@ -66,10 +66,11 @@ import { UserService } from 'src/app/service/user.service';
     </div>
   
   
-      <button type="submit"  [disabled]=createForm.invalid class="btn btn-primary">Save</button>
+      <button type="submit" (click)=" on_click()"  [disabled]=createForm.invalid class="btn btn-primary">Save</button>
       <button type="button"   class="btn btn-primary" (click)="cancel()">Cancel</button>
       </form>
-    </div>`,
+    </div>
+    </body>`,
     styles: ['em{float:right; color: #E05c65; padding-left-10px;}']
   })
   
@@ -111,5 +112,10 @@ import { UserService } from 'src/app/service/user.service';
   
     cancel() {
       this.router.navigate(['/navbar/user-management/user'])
+    }
+
+    on_click()
+    {
+    alert('User Added Successfully');
     }
   }

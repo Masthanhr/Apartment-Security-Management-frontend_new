@@ -1,42 +1,122 @@
-<form #loginForm = "ngForm" novalidate (ngSubmit)=validation()>
+<!-- <body>
+<div>
+  <H1><b>APARTMENT SECURITY MANAGEMENT</b></H1>
+</div>
+<form #loginForm="ngForm" novalidate (ngSubmit)=validation()>
   <div id="img">
-      <div id="login" class="container"  >
-        <div id="login-row" class="row justify-content-center align-items-center">
-          <div id="login-column" class="col-md-6">
-              <div id="login-box" class="col-md-12">
-                  
-                <h3 class="text-center text-info">Login</h3>
-                    <div class="form-group">
-                        <label for="username" class="text-info">User Email Id:</label><br>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card text-info bg-dark card-login ">
+            <div class="card-body text">
+
+              <div id="login" class="container">
+                <div id="login-row" class="row justify-content-center align-items-center">
+                  <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
                       
-        <input #uname name="emailId" type="text" placeholder="Enter username" [(ngModel)] = userData.emailId required></div>
-        <em id="errName" style="color:  rgb(4, 27, 22); font-size: large;"></em>
-        <em *ngIf="loginForm.controls.emailId?.invalid && (loginForm.controls.emailId?.touched)" style="font-size: medium; color:  rgb(43, 39, 39)"> Username can't be empty</em>
-        
-        <div><label for="password" class="text-info">Password:</label><br>
-        <input #pass name="password" type="password" placeholder="Enter password"  [(ngModel)] =userData.password  required ></div>
-        <em div id="errPass" style="color: rgb(26, 68, 85); font-size: large; "></em>
-        <em *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password?.touched)" style="font-size: medium; color:  rgb(43, 40, 40)"> Passwordcan't be empty</em>
-      <br/>
-      <br/>
-      
-            <button type="submit"class="btn btn-primary">Login</button>
-        
-            <button type="reset"class="btn btn-primary" style="margin-left: 2%;" >Reset</button>
-    
+                        <h2> Login </h2>
+                      
+                      <div class="form-group">
+                        <label for="useremailId" class="text-info">User Email Id:</label><br>
+                        <input #uname name="emailId" type="text" placeholder="Ex: abc@gmail.com"
+                          pattern="[a-z0-9._%+-]+@[a-zp0-9.-]+\.[a-z]{2,4}$" [(ngModel)]=userData.emailId required>
+                      </div>
+                      <em id="erremailId" style="color:  rgb(4, 27, 22); font-size: large;"></em>
+                      <div *ngIf="loginForm.controls.emailId?.invalid && (loginForm.controls.emailId?.touched)" class="alert alert-danger"
+                        style="font-size: medium; color:  rgb(43, 39, 39)"> Invalid Email-Id</div>
+
+                      <div><label for="password" class="text-info">Password:</label><br>
+                        <input  name="password" type="password" placeholder="Enter password" pattern=".{8,}"
+                          title="8 characters minimum" [(ngModel)]=userData.password required>
+                      </div>
+                      <em div id="errPass" style="color: rgb(26, 68, 85); font-size: large; "></em>
+                      <div *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password?.touched)" class="alert alert-danger"
+                        style="font-size: medium; color:  rgb(43, 40, 40)">Invalid Password</div>
+                      <br>
+
+
+                      <button type="submit" [disabled]=loginForm.invalid (click) = "on_click1()" class="btn btn-primary">Login</button>
+
+                      <button type="reset" class="btn btn-primary" style="margin-left: 5%;">Reset</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" (click)="onButtonClick($event)" class="btn btn-primary">Registration</button>
+
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
 </form>
   
-
-  <!-- {{userData.username |json}}
-  {{userData |json}} -->
-    <!-- <div *ngFor = "let admin of userData">
-      {{admin.username}}
-    </div> -->
+</body> -->
 
 
+<body>
+  <div id="img">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card text-dark bg-dark card-signin ">
+            <div class="card-body">
 
+              <div class="container" style="width:550px">
+                <div style="text-align:center;">
+                  <h2> Login </h2>
+                </div>
+                <div class="col-md-10" id="login">
+
+                  <form [formGroup]="loginForm" autocomplete="off" novalidate (ngSubmit)="validation(loginForm.value)">
+              
+
+                  
+
+                  <div class="form-group">
+                    <label for="emailId">Email ID : </label>
+                    <input id="emailId" type="email" class="form-control" formControlName="emailId"
+                      pattern="[a-z0-9._%+-]+@[a-zp0-9.-]+\.[a-z]{2,4}$" (ngModel)=loginForm.value.emailId
+                      placeholder=" Enter your email id." required>
+                    <em *ngIf="loginForm.controls.emailId?.invalid && (loginForm.controls.emailId?.touched)" class="alert alert-danger"> Invalid
+                      Email-Id </em>
+                    <div id="erremailId"></div>
+                  </div>
+                  <br>
+
+                  <div class="form-group">
+                    <label for="password">Password :</label>
+                    <input type="password" class="form-control" formControlName="password" pattern=".{8,}" required
+                      title="8 characters minimum" (ngModel)=loginForm.value.password placeholder=" Enter Valid password" />
+                    <em id="errfirstName" style="color:  white; font-size: large;"></em>
+                    <em *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password?.touched)"
+                      style="font-size: medium; color:  white"> Password must have atleast 8 characters</em>
+                      <div id="errpassword"></div>
+                    </div>
+                  <br>
+
+                  <button type="submit" [disabled]=loginForm.invalid class="btn btn-primary">Login</button>
+                  <button type="reset" class="btn btn-primary" style="margin-left: 2%;">Reset</button>
+
+
+                  <div class="container">
+                    <button type="submit" (click)="onButtonClick($event)" class="btn btn-primary">Registration</button>
+                  </div>
+
+                  </form>
+                </div>
+
+              </div>
+
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

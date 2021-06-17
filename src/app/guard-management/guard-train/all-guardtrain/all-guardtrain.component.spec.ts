@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AllGuardtrainComponent } from './all-guardtrain.component';
+import { AllGuardTrainComponent } from './all-guardtrain.component';
 
-describe('AllGuardtrainComponent', () => {
-  let component: AllGuardtrainComponent;
-  let fixture: ComponentFixture<AllGuardtrainComponent>;
+describe('AllGuardTrainComponent', () => {
+  let component: AllGuardTrainComponent;
+  let fixture: ComponentFixture<AllGuardTrainComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AllGuardtrainComponent ]
+      declarations: [ AllGuardTrainComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AllGuardtrainComponent);
+    fixture = TestBed.createComponent(AllGuardTrainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -6,14 +6,17 @@ import { DeliveryService } from 'src/app/service/delivery.service';
 
 @Component({
   selector: 'delivery-details',
-  template:  `<div *ngIf="errorMessage" class="alert alert-danger">
+  template:  `
+  <body style="background-color:#C0C0C0">
+  <div *ngIf="errorMessage" class="alert alert-danger">
   {{errorMessage?.error?.details | json}}
   </div>
 
   <div>
+  <div class = "container" style="text-align: center; width:1100px;">
   <div *ngIf="delivery" class="well hoverwell thumbnail py-3 my-3">
   <table class="table table-bordered">
-  <tr>
+  <tr style="background-color: yellowgreen;">
   <th>Delivery Id</th>
   <th>Owner Name</th>
   <th>Time</th>
@@ -33,7 +36,9 @@ import { DeliveryService } from 'src/app/service/delivery.service';
   
   </table>
 </div>
-</div>`
+</div>
+</div>
+</body>`
               ,
 })
 export class DeliveryByNameComponent {

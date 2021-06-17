@@ -7,13 +7,17 @@ import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'user',
   template: `
+  <body style="background-color:#C0C0C0">
             <div class="container">
             <h2> User Component</h2>
-            <div  *ngFor="let user of users | paginate: {itemsPerPage: 1 ,currentPage:p}"> 
-            <alluser [userinfo] = user (customEvent) = "parentFunction($event)"></alluser>
+                <div  *ngFor="let user of users | paginate: {itemsPerPage: 1 ,currentPage:p}"> 
+                <alluser [userinfo] = user (customEvent) = "parentFunction($event)"></alluser>
+                </div>
+              <div style="background-color:blue">
+              <pagination-controls (pageChange)="p=$event"></pagination-controls>
+              </div>
             </div>
-            <pagination-controls (pageChange)="p=$event"></pagination-controls>
-            </div>`
+        </body>`
  
 })
 export class UserComponent {

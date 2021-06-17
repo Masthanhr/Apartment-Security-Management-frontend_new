@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AllGuardshiftComponent } from './all-guardshift.component';
+import { AllGuardShiftComponent } from './all-guardshift.component';
 
-describe('AllGuardshiftComponent', () => {
-  let component: AllGuardshiftComponent;
-  let fixture: ComponentFixture<AllGuardshiftComponent>;
+describe('AllGuardShiftComponent', () => {
+  let component: AllGuardShiftComponent;
+  let fixture: ComponentFixture<AllGuardShiftComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AllGuardshiftComponent ]
+      declarations: [ AllGuardShiftComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AllGuardshiftComponent);
+    fixture = TestBed.createComponent(AllGuardShiftComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -17,6 +17,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { VisitorService } from './service/visitor.service';
 import { UserService } from './service/user.service';
 import { AdminService } from './service/admin.service';
+import { LoginComponent } from './login/login.component';
+
 
 
 @NgModule({
@@ -24,6 +26,10 @@ import { AdminService } from './service/admin.service';
     AppComponent,
     routingComponent,
     NavbarComponent,
+    LoginComponent,
+  
+    
+    
     
     
   ],

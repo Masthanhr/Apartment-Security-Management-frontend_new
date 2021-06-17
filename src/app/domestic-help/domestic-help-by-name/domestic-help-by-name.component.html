@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <h1 style="text-align: center"><u> Help By Name </u></h1>
-    <body style="background-image: url('./assets/apartemnt 1.jpg');" >
+    <body style="background-image: url('/assets/apartment1.jpeg');" >
         <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage?.error?.details | json}}</div>
         <div class="container pt-3"> 
             <hr/>
@@ -21,7 +21,7 @@
                      Date: {{domHelp?.dat}} <br/>
                      Help Type: {{domHelp?.helpType}} <br/> 
                      </div></h3>
-                     <button class="btn btn-primary" (click)="deleteHelp(domHelp.flatNo)">delete</button>
+                     <button class="btn btn-danger" (click)="deleteHelp(domHelp.flatNo)">delete</button>
                      <button class="btn btn-primary" (click)="updateHelp(domHelp.flatNo)">Update</button>
                     <!-- </div> --->
                    </div>  

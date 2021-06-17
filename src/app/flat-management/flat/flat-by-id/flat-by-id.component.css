@@ -1,0 +1,24 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.hoverwell:hover{
+    background-color:wheat;
+    cursor: pointer;
+}
+.well{
+    background-color: darksalmon;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+.form{
+    display:inline-table;
+    text-align: right;
+}
+
+footer{
+    background-color: black;
+    color: white;
+}

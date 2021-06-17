@@ -1,7 +1,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-    <nav class="navbar navbar-expand-lg navbar-dark bd-navbar-nav bg-dark">
-      <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+    <nav class="navbar navbar-expand-lg " style="background-color: #000;">
+      <a class="navbar-brand"  [routerLink]="['./']"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
         <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
       </svg></a>
       <button
@@ -13,7 +13,7 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon "  id="span1"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -24,26 +24,6 @@
             <a class="nav-link" id="pills-home-tab" data-toggle="pill" [routerLink]="['./guard-management']">Guard Management</a>
           </li>
 
-          <!-- <li class="nav-item dropdown px-2"  id="pills-home-tab" data-toggle="pill">
-            <a
-            class="nav-link"
-              [routerLink]="['/guard-management']"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-            Guard Management
-            </a>
-            <div class="dropdown-menu" id="pills-home-tab" data-toggle="pill" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" id="pills-home-tab" data-toggle="pill" [routerLink]="['guard-management/guardtrain']">Guard Train</a>
-              <a class="dropdown-item" id="pills-home-tab" data-toggle="pill" [routerLink]="['guard-management/guardshift']">Guard Shift</a>
-              <a class="dropdown-item" id="pills-home-tab" data-toggle="pill" [routerLink]="['guard-management/guardsalary']">Guard Salary</a>
-              <div class="dropdown-divider"></div>
-              
-            </div>
-          </li> -->
           <li class="nav-item px-1">
             <a class="nav-link" id="pills-home-tab" data-toggle="pill" [routerLink]="['./delivery-management']">Delivery Management</a>
           </li>
@@ -51,12 +31,12 @@
             <a class="nav-link" id="pills-home-tab" data-toggle="pill" [routerLink]="['./vehicle-management']">Vehicle Management</a>
           </li>
           <li class="nav-item px-1">
-            <a class="nav-link" id="pills-home-tab" data-toggle="pill" [routerLink]="['./flat-management']">Flat Management</a>
+            <a class="nav-link" id="pills-home-tab" data-toggle="pill"  [routerLink]="['./flat-management']">Flat Management</a>
           </li>
           <!-- <li class="nav-item dropdown px-2"  id="pills-home-tab" data-toggle="pill">
             <a
             class="nav-link"
-              [routerLink]="['/flat-management']"
+              [routerLink]="['./']"
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
@@ -65,13 +45,18 @@
             >
               Flat Management
             </a>
-            <div class="dropdown-menu" id="pills-home-tab" data-toggle="pill" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" id="pills-home-tab" data-toggle="pill" [routerLink]="['flat-management/flat']">Flat</a>
-              <a class="dropdown-item" id="pills-home-tab" data-toggle="pill" [routerLink]="['flat-management/flatrent']">Flat Rent</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item"  [routerLink]="['./flat']">Flat</a>
+              <a class="dropdown-item"  [routerLink]="['./flatrent']">Flat Rent</a>
               <div class="dropdown-divider"></div>
               
             </div>
           </li> -->
+         
+
+
+
+
           
           <li class="nav-item px-1">
             <a class="nav-link" id="pills-home-tab" data-toggle="pill" [routerLink]="['./visitor-management']">Visitor Management</a>
@@ -108,7 +93,10 @@
         
       </div>
     </nav>
+    
 
     <router-outlet></router-outlet>
+
+    
  
 

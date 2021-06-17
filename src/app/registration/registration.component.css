@@ -1,0 +1,33 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+.hoverwell:hover{
+    background-color: beige;
+    cursor: pointer;
+}
+
+body{
+    background-image: url("/assets/register.jpeg");
+    background-color: azure;
+   
+}
+
+
+.form{
+    display: inline-table;
+    text-align: right;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+
+#nav{
+    align-items: center;
+}
+
+h2,h5, label{
+    color: white;
+  }
+  .form-group{
+    color: white;
+  }

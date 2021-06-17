@@ -8,7 +8,7 @@ import { FlatService } from 'src/app/service/flat.service';
   selector: 'viewbyname',
   template:`
 
-  <div *ngIf="errorMessage" class="alert alert-danger">
+  <div *ngIf="errorMessage" class="alert alert-danger  text-center">
   {{errorMessage?.error?.details | json}}
   </div>
   
@@ -16,7 +16,7 @@ import { FlatService } from 'src/app/service/flat.service';
   <div class="container">
   <div  class= "row row-cols-3">
   
-  <div class="well hoverwell thumbnail py-3 my-3">
+  <div *ngIf="flatdata" class="well hoverwell thumbnail py-3 my-3  ">
       
       <div> OWNER NAME : {{flatdata?.ownerName | titlecase}} </div>
       <div>FLAT NO : {{flatdata?.flatNo | titlecase}} </div>
